@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Instructor Dashboard - My Quiz app</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/dash-style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Quiz site</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+
+
+
+            </div>
+
+
+            <div class="col-lg-3">
+                <h1 class="my-4">Instructor</h1>
+                <nav>
+                    <div class="list-group" id="nav-tab" role="tablist">
+                        <a class="list-group-item active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                            role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+
+                        <!-- <a class="list-group-item" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                            aria-controls="nav-profile" aria-selected="false">Profile</a>
+                        <a class="list-group-item" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                            aria-controls="nav-contact" aria-selected="false">Contact</a> -->
+
+                        <a class="list-group-item" id="quiz-tab" data-toggle="tab" href="#quiz-div" role="tab"
+                            aria-controls="quiz-div" aria-selected="false">Manage Quizzes</a>
+
+                        <a class="list-group-item" id="qb-tab" data-toggle="tab" href="#qb-div" role="tab"
+                            aria-controls="qb-div" aria-selected="false">Manage Question bank</a>
+                    </div>
+                </nav>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+                        <!-- <div class="card my-4">
+                            <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title">Product Name</h3>
+                                <h4>$24.99</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+                                    dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam
+                                    sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
+                                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                                4.0 stars
+                            </div>
+                        </div> -->
+
+
+
+                        <div class="jumbotron mt-4">
+                            <h1 class="display-4">Hello, {{email}}!</h1>
+                            <p class="lead">Welcome to your personalised dashboard!</p>
+                            <hr class="my-4">
+                            <p>Get started by managing Quizzes and Question bank.</p>
+                            <p class="lead">
+                                <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal"
+                                    data-target="#learn-more">Learn more</a>
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        ...
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                Product Reviews
+                            </div>
+                            <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam
+                                    inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam
+                                    aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+                                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                                <hr>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam
+                                    inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam
+                                    aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+                                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                                <hr>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam
+                                    inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam
+                                    aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+                                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                                <hr>
+                                <a href="#" class="btn btn-success">Leave a Review</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="tab-pane fade" id="qb-div" role="tabpanel" aria-labelledby="qb-tab">
+                        <div class="jumbotron mt-4">
+                            <h1 class="display-4">Manage Question Bank</h1>
+                            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling
+                                extra attention to featured content or information.</p>
+                            <hr class="my-4">
+                            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger
+                                container.</p> -->
+                            <p class="lead">
+                                <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal"
+                                    data-target="#add-ques">Add new Question</a>
+                            </p>
+                        </div>
+
+                        <div class="my-4">
+                            <div class="card h-100">
+
+                                <div class="card-body">
+                                    <h2 class="card-header-x">All questions</h2>
+                                    <hr>
+                                    <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Sapiente esse necessitatibus neque.</p> -->
+
+
+                                    <div id="ques-disp">
+
+                                    </div>
+                                    <!-- <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+
+                                </div>
+
+                                <!-- <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                </div> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="quiz-div" role="tabpanel" aria-labelledby="quiz-tab">
+                        <div class="jumbotron mt-4">
+                            <h1 class="display-4">Manage Quizzes</h1>
+                            <p class="lead">Welcome to your personalised dashboard!</p>
+                            <hr class="my-4">
+                            <!-- <p>Get started by managing Quizzes and Question bank.</p> -->
+                            <p class="lead">
+                                <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal"
+                                    data-target="#create-quiz">Create new Quiz</a>
+                            </p>
+                        </div>
+
+                        <div class="my-4">
+                            <div id="quiz-disp" class="row">
+
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            Quiz
+                                        </div>
+                                        <div class="card-body">
+
+                                            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                    Sapiente esse necessitatibus neque.</p> -->
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="#" class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div id="quiz-list-quiz-modal">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="learn-more" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">LMy Quiz App</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat tenetur, ratione quis,
+                        voluptates velit minima maxime error quia numquam iusto dolorem cumque nesciunt sapiente odio,
+                        debitis repudiandae dolores perspiciatis consequuntur?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add-ques" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add new Question</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Question:</label>
+                        <textarea placeholder="Enter your Question here" class="form-control" id="ques-text"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Options:</label>
+                        <div id="options-div">
+                            <!-- <input type="text" class="form-control" id="Opt1"> -->
+
+
+
+                        </div>
+                        <a id="new-opt" href="#">Add new Option</a>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="submit-question" type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="create-quiz" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Create new Quiz</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- <h6>Question:</h6> -->
+                    <input type="text" class="form-control mb-3" id="quiz-name" placeholder="Quiz Name">
+
+                    <p>Enter Start date and End date:</p>
+                    <div class="input-group mb-3">
+                        <input type="date" class="form-control" id="start-date" placeholder="Start Date">
+                        <input type="date" class="form-control" id="end-date" placeholder="End date">
+                    </div>
+
+                    <hr>
+                    <!-- <h6>Select the Question:</h6> -->
+                    <p>Check the questions you want to add in the quiz</p>
+                    <!-- <hr> -->
+
+                    <div id="questions-list-quiz-modal">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="save-quiz-details" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="edit-quiz" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Quiz</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- <h6>Question:</h6> -->
+                    <span id="quiz-edit-id"class="hidden text-hidden"></span>
+                    <span id="quiz-edit-authors"class="hidden text-hidden"></span>
+                    <span id="quiz-edit-createdOn"class="hidden text-hidden"></span>
+                    <input type="text" class="form-control mb-3" id="edit-quiz-name" placeholder="Quiz Name">
+
+                    <p>Edit Start date and End date:</p>
+                    <div class="input-group mb-3">
+                        <input type="date" class="form-control" id="edit-start-date" placeholder="Start Date">
+                        <input type="date" class="form-control" id="edit-end-date" placeholder="End date">
+                    </div>
+
+                    <hr>
+                    <!-- <h6>Select the Question:</h6> -->
+                    <p>Check the questions you want to add in the quiz</p>
+                    <!-- <hr> -->
+
+                    <div id="questions-list-quiz-edit">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="save-edited-quiz-details" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <!-- <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; My Quiz site 2019</p>
+        </div>
+    </footer> -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/instructor.js"></script>
+
+</body>
+
+</html>
